@@ -22,13 +22,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#" class="navbar-brand">Voodootodo</a>
+                    <a href="{{ path('todoitem_index') }}" class="navbar-brand">Voodootodo</a>
                 </div>
-                <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Todo list</a></li>
-                    </ul>
-                </div>
+
+                {% for breadcrumb in breadcrumb_path %}
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="{{ breadcrumb.path }}">{{ breadcrumb.name }}</a></li>
+                        </ul>
+                    </div>
+                {% endfor %}
             </div>
         </nav>
             

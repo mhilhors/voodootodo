@@ -37,6 +37,13 @@ class TodoItemController extends Controller
         return $this->render('todoitem/index.html.twig', array(
             'todoItems' => $todoItems,
             'delete_forms' => $deleteForms,
+            'current_page' => 'todoitem_index',
+            'breadcrumb_path' => array(
+                array(
+                    'path' => $this->generateUrl('todoitem_index'),
+                    'name' => 'Things to do',
+                ),
+            ),
         ));
     }
 
@@ -63,6 +70,13 @@ class TodoItemController extends Controller
         return $this->render('todoitem/new.html.twig', array(
             'todoItem' => $todoItem,
             'form' => $form->createView(),
+            'current_page' => 'todoitem_new',
+            'breadcrumb_path' => array(
+                array(
+                    'path' => $this->generateUrl('todoitem_new'),
+                    'name' => 'Add a new todo item',
+                ),
+            ),
         ));
     }
 
@@ -88,6 +102,12 @@ class TodoItemController extends Controller
         return $this->render('todoitem/edit.html.twig', array(
             'todoItem' => $todoItem,
             'edit_form' => $editForm->createView(),
+            'breadcrumb_path' => array(
+                array(
+                    'path' => $this->generateUrl('todoitem_edit', array('id' => $todoItem->getId())),
+                    'name' => 'Edit a todo item',
+                ),
+            ),
         ));
     }
 
