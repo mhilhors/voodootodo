@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>TodoItem list</h1>
+
+    <div class="todo-list-header">
+        <div class="row">
+            <div class="todo-item-reminder-text col-md-9">Reminder text</div>
+            <div class="todo-item-actions col-md-3">Actions</div>
+        </div>
+    </div>
+    <ul class="todo-list">
+    {% for todoItem in todoItems %}
+        <li class="todo-item row">
+            <div class="todo-item-reminder-text col-md-9">
+                {{ todoItem.reminderText }}
+            </div>
+            <div class="todo-item-actions col-md-3">
+                <ul>
+                    <li>
+                        <a href="{{ path('todoitem_show', { 'id': todoItem.id }) }}"><i class="glyphicon glyphicon-eye-open"></i></a>
+                    </li>
+                    <li>
+                        <a href="{{ path('todoitem_edit', { 'id': todoItem.id }) }}"><i class="glyphicon glyphicon-edit"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <ul class="todo-list-footer">
+        <li>
+            <a class="btn btn-primary" href="{{ path('todoitem_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

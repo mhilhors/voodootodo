@@ -1,0 +1,25 @@
+.todo-list-header {
+    font-weight: bold;
+}
+
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todo-item {
+}
+
+.todo-item-actions ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todo-item-actions ul li {
+    display: inline;
+}
+
+.todo-list-footer {
+    list-style-type: none;
+    padding: 0;
+}

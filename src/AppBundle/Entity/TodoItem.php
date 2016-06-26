@@ -16,10 +16,14 @@ class TodoItem
      */
     private $reminderText;
 
-    public function __construct($reminderText)
+    /**
+     * Gets the id.
+     *
+     * @return
+     */
+    public function getId()
     {
-        $this->id = null;
-        $this->reminderText = $reminderText;
+        return $this->id;
     }
     
     /**
@@ -31,7 +35,7 @@ class TodoItem
     {
         return $this->reminderText;
     }
-    
+
     /**
      * Sets the reminderText.
      *
