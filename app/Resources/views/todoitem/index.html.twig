@@ -1,14 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>TodoItem list</h1>
-
-    <div class="todo-list-header">
-        <div class="row">
-            <div class="todo-item-reminder-text col-md-9">Reminder text</div>
-            <div class="todo-item-actions col-md-3">Actions</div>
-        </div>
-    </div>
+    <h1>Things to do</h1>
 
     <ul class="todo-list">
     {% for todoItem in todoItems %}
@@ -19,9 +12,6 @@
             <div class="todo-item-actions col-md-3">
                 <ul>
                     <li>
-                        <a href="{{ path('todoitem_show', { 'id': todoItem.id }) }}"><i class="glyphicon glyphicon-eye-open"></i></a>
-                    </li>
-                    <li>
                         <a href="{{ path('todoitem_edit', { 'id': todoItem.id }) }}"><i class="glyphicon glyphicon-edit"></i></a>
                     </li>
                 </ul>
@@ -30,9 +20,13 @@
     {% endfor %}
     </ul>
 
-    <ul class="button-cart">
-        <li>
-            <a class="btn btn-primary" href="{{ path('todoitem_new') }}"><i class="glyphicon glyphicon-plus"></i> Add a new item</a>
-        </li>
-    </ul>
+    <div class="button-cart">
+        <ul class="button-cart-back">
+        </ul>
+        <ul class="button-cart-forward">
+            <li>
+                <a class="btn btn-primary" href="{{ path('todoitem_new') }}"><i class="glyphicon glyphicon-plus"></i> Add a new item</a>
+            </li>
+        </ul>
+    </div>
 {% endblock %}

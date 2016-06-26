@@ -5,18 +5,22 @@
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <ul class="button-cart">
-            <li>
-                <a class="btn btn-default" href="{{ path('todoitem_index') }}"
-                    ><i class="glyphicon glyphicon-remove"></i> Back</a>
-            </li>
-            <li>
-                <button class="btn btn-primary" type="submit">
-                    <i class="glyphicon glyphicon-floppy-disk"></i>
-                    Save
-                </button>
-            </li>
-        </ul>
+        <div class="button-cart row">
+            <ul class="button-cart-back col-md-6">
+                <li>
+                    <a class="btn btn-link" href="{{ path('todoitem_index') }}"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+                </li>
+            </ul>
+
+            <ul class="button-cart-forward col-md-6">
+                <li>
+                    <button class="btn btn-primary" type="submit">
+                        <i class="glyphicon glyphicon-floppy-disk"></i>
+                        Save
+                    </button>
+                </li>
+            </ul>
+        </div>
     {{ form_end(form) }}
 
 {% endblock %}

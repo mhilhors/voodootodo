@@ -48,28 +48,12 @@ class TodoItemController extends Controller
             $em->persist($todoItem);
             $em->flush();
 
-            return $this->redirectToRoute('todoitem_show', array('id' => $todoItem->getId()));
+            return $this->redirectToRoute('todoitem_index', array('id' => $todoItem->getId()));
         }
 
         return $this->render('todoitem/new.html.twig', array(
             'todoItem' => $todoItem,
             'form' => $form->createView(),
-        ));
-    }
-
-    /**
-     * Finds and displays a TodoItem entity.
-     *
-     * @Route("/{id}", name="todoitem_show")
-     * @Method("GET")
-     */
-    public function showAction(TodoItem $todoItem)
-    {
-        $deleteForm = $this->createDeleteForm($todoItem);
-
-        return $this->render('todoitem/show.html.twig', array(
-            'todoItem' => $todoItem,
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -90,7 +74,7 @@ class TodoItemController extends Controller
             $em->persist($todoItem);
             $em->flush();
 
-            return $this->redirectToRoute('todoitem_edit', array('id' => $todoItem->getId()));
+            return $this->redirectToRoute('todoitem_index', array('id' => $todoItem->getId()));
         }
 
         return $this->render('todoitem/edit.html.twig', array(
