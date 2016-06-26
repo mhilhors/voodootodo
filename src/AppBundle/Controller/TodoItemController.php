@@ -25,9 +25,18 @@ class TodoItemController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
+        $todoItems = $em->getRepository('AppBundle:TodoItem')->findAll();
+
+        $deleteForms = array();
+        foreach ($todoItems as $todoItem)
+        {
+            $deleteForms[$todoItem->getId()] = $this->createDeleteForm($todoItem)
+                ->createView();
+        }
 
         return $this->render('todoitem/index.html.twig', array(
-            'todoItems' => $em->getRepository('AppBundle:TodoItem')->findAll(),
+            'todoItems' => $todoItems,
+            'delete_forms' => $deleteForms,
         ));
     }
 
@@ -65,7 +74,6 @@ class TodoItemController extends Controller
      */
     public function editAction(Request $request, TodoItem $todoItem)
     {
-        $deleteForm = $this->createDeleteForm($todoItem);
         $editForm = $this->createForm('AppBundle\Form\TodoItemType', $todoItem);
         $editForm->handleRequest($request);
 
@@ -80,7 +88,6 @@ class TodoItemController extends Controller
         return $this->render('todoitem/edit.html.twig', array(
             'todoItem' => $todoItem,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 

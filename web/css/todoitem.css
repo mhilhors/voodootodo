@@ -12,7 +12,7 @@
     padding: 0;
 }
 
-.todo-item-actions ul li {
+.todo-item-actions ul li, .todo-item-actions form {
     display: inline;
 }
 

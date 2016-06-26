@@ -14,6 +14,13 @@
                     <li>
                         <a href="{{ path('todoitem_edit', { 'id': todoItem.id }) }}"><i class="glyphicon glyphicon-edit"></i></a>
                     </li>
+                    <li>
+                        {{ form_start(delete_forms[todoItem.id]) }}
+                            <button class="btn btn-link btn-xs" type="submit">
+                                <i class="glyphicon glyphicon-remove"></i>
+                            </button>
+                        {{ form_end(delete_forms[todoItem.id]) }}
+                    </li>
                 </ul>
             </div>
         </li>
