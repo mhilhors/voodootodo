@@ -57,7 +57,7 @@ class TodoItemController extends Controller
             $em->persist($todoItem);
             $em->flush();
 
-            return $this->redirectToRoute('todoitem_index', array('id' => $todoItem->getId()));
+            return $this->redirectToRoute('todoitem_index');
         }
 
         return $this->render('todoitem/new.html.twig', array(
@@ -82,7 +82,7 @@ class TodoItemController extends Controller
             $em->persist($todoItem);
             $em->flush();
 
-            return $this->redirectToRoute('todoitem_index', array('id' => $todoItem->getId()));
+            return $this->redirectToRoute('todoitem_index');
         }
 
         return $this->render('todoitem/edit.html.twig', array(

@@ -6,10 +6,10 @@
     <ul class="todo-list">
     {% for todoItem in todoItems %}
         <li class="todo-item row">
-            <div class="todo-item-reminder-text col-md-9">
+            <div class="todo-item-reminder-text col-xs-9">
                 {{ todoItem.reminderText }}
             </div>
-            <div class="todo-item-actions col-md-3">
+            <div class="todo-item-actions col-xs-3">
                 <ul>
                     <li>
                         <a href="{{ path('todoitem_edit', { 'id': todoItem.id }) }}"><i class="glyphicon glyphicon-edit"></i></a>
