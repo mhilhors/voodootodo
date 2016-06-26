@@ -1,0 +1,11 @@
+AppBundle\Entity\TodoItem:
+    type: entity
+    table: todoItem
+    repositoryClass: AppBundle\Entity\DoctrineTodoItemRepository
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        reminderText:
+            type: string
