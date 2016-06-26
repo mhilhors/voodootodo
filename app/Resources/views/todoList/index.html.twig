@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Things you need to do</h1>
+    <ul>
+        {% for todoItem in todoItems %}
+            <li>{{todoItem.reminderText}}
+        {% endfor %}
+    </ul>
+{% endblock %}
