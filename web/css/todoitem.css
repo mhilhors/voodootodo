@@ -7,7 +7,8 @@
     padding: 0;
 }
 
-.todo-item {
+.todo-item-actions {
+    text-align: right;
 }
 
 .todo-item-actions ul {
@@ -19,7 +20,11 @@
     display: inline;
 }
 
-.todo-list-footer {
+.button-cart {
     list-style-type: none;
-    padding: 0;
+    text-align: right;
+}
+
+.button-cart li {
+    display: inline;
 }

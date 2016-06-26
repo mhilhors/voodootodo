@@ -9,6 +9,7 @@
             <div class="todo-item-actions col-md-3">Actions</div>
         </div>
     </div>
+
     <ul class="todo-list">
     {% for todoItem in todoItems %}
         <li class="todo-item row">
@@ -29,9 +30,9 @@
     {% endfor %}
     </ul>
 
-    <ul class="todo-list-footer">
+    <ul class="button-cart">
         <li>
-            <a class="btn btn-primary" href="{{ path('todoitem_new') }}">Create a new entry</a>
+            <a class="btn btn-primary" href="{{ path('todoitem_new') }}"><i class="glyphicon glyphicon-plus"></i> Add a new item</a>
         </li>
     </ul>
 {% endblock %}
