@@ -1,12 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Things to do</h1>
+    <h1>{% trans %}Things to do{% endtrans %}</h1>
 
     <ul class="todo-list">
     {% for todoItem in todoItems %}
-        <li class="todo-item row">
-            <div class="todo-item-reminder-text col-xs-9">
+        <li class="todo-item row ">
+            <div class="todo-item-completed col-xs-1">
+                {% if todoItem.isCompleted() %}
+                    <i class="glyphicon glyphicon-ok"></i>
+                {% endif %}
+            </div>
+            <div class="todo-item-reminder-text col-xs-8">
                 {{ todoItem.reminderText }}
             </div>
             <div class="todo-item-actions col-xs-3">
@@ -32,7 +37,10 @@
         </ul>
         <ul class="button-cart-forward">
             <li>
-                <a class="btn btn-primary" href="{{ path('todoitem_new') }}"><i class="glyphicon glyphicon-plus"></i> Add a new item</a>
+                <a class="btn btn-primary" href="{{ path('todoitem_new') }}">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    {% trans %}Add a new todo item{% endtrans %}
+                </a>
             </li>
         </ul>
     </div>

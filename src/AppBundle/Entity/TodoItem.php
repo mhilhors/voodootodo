@@ -17,6 +17,13 @@ class TodoItem
     private $reminderText;
 
     /**
+     * Whether the user completed the item or not.
+     * 
+     * @var bool
+     */
+    private $completed;
+
+    /**
      * Gets the id.
      *
      * @return
@@ -45,6 +52,29 @@ class TodoItem
     public function setReminderText($reminderText)
     {
         $this->reminderText = $reminderText;
+        return $this;
+    }
+
+    /**
+     * Gets the completion status of the item.
+     * 
+     * @return bool
+     */
+    public function isCompleted()
+    {
+        return $this->completed;
+    }
+
+    /**
+     * Sets the completion status of the item.
+     * 
+     * @param bool $completed
+     * 
+     * @return $this
+     */
+    public function setCompleted($completed)
+    {
+        $this->completed = $completed;
         return $this;
     }
 }

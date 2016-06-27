@@ -9,3 +9,5 @@ AppBundle\Entity\TodoItem:
     fields:
         reminderText:
             type: string
+        completed:
+            type: boolean

@@ -1,6 +1,11 @@
+/* The todo item overview */
 .todo-list {
     list-style-type: none;
     padding: 0;
+}
+
+.todo-item-completed {
+    color: green;
 }
 
 .todo-item-actions {
@@ -12,10 +17,21 @@
     padding: 0;
 }
 
-.todo-item-actions ul li, .todo-item-actions form {
+.todo-item-actions ul li,
+.todo-item-actions form /* "POST-links", like a delete link */ {
     display: inline;
 }
 
+/* The new todo item form */
+/*
+ * The 'completed' option should be hidden for new items. It's a bit silly to
+ * give the ability to add a todo item that has already been completed.
+ */
+.new-todo-item-form .form-group:nth-child(2) {
+    display: none;
+}
+
+/* The button cart at the bottom of a form */
 .button-cart {
     list-style-type: none;
     padding: 0;

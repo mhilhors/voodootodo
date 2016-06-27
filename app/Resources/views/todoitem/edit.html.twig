@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Edit a todo item</h1>
+    <h1>{% trans %}Edit a todo item{% endtrans %}</h1>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
@@ -9,14 +9,17 @@
         <div class="button-cart row">
             <ul class="button-cart-back col-md-6">
                 <li>
-                    <a class="btn btn-link" href="{{ path('todoitem_index') }}"><i class="glyphicon glyphicon-chevron-left"></i>Back</a>
+                    <a class="btn btn-link" href="{{ path('todoitem_index') }}">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        {% trans %}Back{% endtrans %}
+                    </a>
                 </li>
             </ul>
 
             <ul class="button-cart-forward col-md-6">
                 <button class="btn btn-primary" type="submit">
                     <i class="glyphicon glyphicon-floppy-disk"></i>
-                    Save
+                    {% trans %}Save{% endtrans %}
                 </button>
             </ul>
         </div>

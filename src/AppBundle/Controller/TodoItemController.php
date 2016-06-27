@@ -22,7 +22,7 @@ class TodoItemController extends Controller
      * @Route("/", name="todoitem_index")
      * @Method("GET")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $todoItems = $em->getRepository('AppBundle:TodoItem')->findAll();
@@ -41,7 +41,7 @@ class TodoItemController extends Controller
             'breadcrumb_path' => array(
                 array(
                     'path' => $this->generateUrl('todoitem_index'),
-                    'name' => 'Things to do',
+                    'title' => 'Things to do',
                 ),
             ),
         ));
@@ -74,7 +74,7 @@ class TodoItemController extends Controller
             'breadcrumb_path' => array(
                 array(
                     'path' => $this->generateUrl('todoitem_new'),
-                    'name' => 'Add a new todo item',
+                    'title' => 'Add a new todo item',
                 ),
             ),
         ));
@@ -105,7 +105,7 @@ class TodoItemController extends Controller
             'breadcrumb_path' => array(
                 array(
                     'path' => $this->generateUrl('todoitem_edit', array('id' => $todoItem->getId())),
-                    'name' => 'Edit a todo item',
+                    'title' => 'Edit a todo item',
                 ),
             ),
         ));
